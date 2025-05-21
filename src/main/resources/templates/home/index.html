@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abenzas Corretora de Seguros</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+	/* Botão flutuante do WhatsApp */
+	    .whatsapp-float {
+	      position: fixed;
+	      bottom: 24px;
+	      right: 24px;
+	      background: #25d366;
+	      color: white;
+	      padding: 14px 18px;
+	      border-radius: 50px;
+	      font-weight: 700;
+	      font-size: 15px;
+	      box-shadow: 0 6px 15px rgb(37 211 102 / 0.5);
+	      text-decoration: none;
+	      z-index: 1100;
+	      display: flex;
+	      align-items: center;
+	      gap: 10px;
+	      transition: transform 0.25s ease, box-shadow 0.25s ease;
+	      transform-origin: center;
+	    }
+	    .whatsapp-float:hover {
+	      transform: scale(1.15);
+	      box-shadow: 0 8px 20px rgb(37 211 102 / 0.8);
+	    }
+	    .whatsapp-icon {
+	      width: 36px;
+	      height: 36px;
+	    }
+	    .whatsapp-text {
+	      white-space: nowrap;
+	      color: white;
+	    }
+		
+    :root {
+      --primary-color: #0056d2;
+      --primary-hover: #0040a8;
+      --text-dark: #1a1a1a;
+      --text-muted: #6c757d;
+      --bg-light: #f1f6ff;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+    }
+
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+	.navbar-brand img {
+	    height: 48px;
+	    width: 48px;
+	    object-fit: cover;
+	    border-radius: 50%;
+	    border: 2px solid #eee;
+	  }
+
+	  .partner-logo {
+	    max-height: 80px;
+	    filter: grayscale(100%);
+	    transition: filter 0.3s ease;
+	  }
+
+	  .partner-logo:hover {
+	    filter: none;
+	  }
+
+	  footer {
+	    background-color: #111;
+	    color: #bbb;
+	    padding: 30px 0;
+	    font-size: 0.9rem;
+	  }
+
+	  footer p {
+	    margin: 0;
+	  }
+
+	  footer .footer-msg {
+	    font-size: 1rem;
+	    color: #ddd;
+	    font-weight: 500;
+	  }
+
+    .nav-link {
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .dropdown-item:hover {
+      color: var(--primary-color);
+      background-color: transparent;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .btn-simule {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn-simule:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .hero {
+      background: linear-gradient(to right, var(--primary-color), #0c4ab8);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+	.hero img {
+	  max-width: 200px;
+	  margin-bottom: 10px;
+	}
+
+	.hero .lead {
+	  margin-top: 0; 
+	}
+
+    .hero .btn-light {
+      font-weight: 600;
+      padding: 12px 30px;
+      border-radius: 6px;
+      margin-top: 25px;
+    }
+
+    .section-title {
+      margin-top: 60px;
+      font-size: 2.2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .highlight-title {
+      color: var(--primary-color);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+    }
+
+    .product-box {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: var(--bg-light);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .product-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      background-color: var(--primary-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 28px;
+    }
+
+    .product-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .learn-more {
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .learn-more:hover {
+      text-decoration: underline;
+    }
+
+    .contact-section {
+      background-color: #f8faff;
+      padding: 60px 0;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    
+
+    .product-row {
+      gap: 30px;
+    }
+	
+	.foto-redonda {
+	    width: 150px;
+	    height: 150px;
+	    border-radius: 50%;
+	    object-fit: cover;
+	    display: block;
+	    margin: 0 auto;
+	  }
+	
+	/* Contact Section */
+	    .contact-section {
+	      background-color: #fff;
+	      padding: 5rem 1.5rem 6rem;
+	      text-align: center;
+	    }
+	    .contact-section h2 {
+	      font-weight: 700;
+	      font-size: 2.2rem;
+	      margin-bottom: 1rem;
+	      color: var(--text-dark);
+	    }
+	    .contact-section p {
+	      max-width: 600px;
+	      margin: 0 auto 3rem;
+	      color: var(--secondary-color);
+	      font-size: 1rem;
+	      line-height: 1.5;
+	    }
+
+	    /* Responsive tweaks */
+	    @media (max-width: 575.98px) {
+	      .hero p.lead {
+	        font-size: 1rem;
+	      }
+	      .section-title {
+	        font-size: 2rem;
+	      }
+	      .product-box {
+	        max-width: 100%;
+	      }
+	    }
+  </style>
+</head>
+<body>
+	
+	<!-- Botão flutuante WhatsApp -->
+	  <a href="https://wa.me/5511988870262?text=Olá,%20gostaria%20de%20falar%20com%20uma%20corretora%20de%20seguros." target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+	    <svg class="whatsapp-icon" fill="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	      <path d="M.057 24l1.687-6.163a11.79 11.79 0 0 1-1.587-5.945C.157 5.26 5.42 0 12.073 0c3.21 0 6.22 1.24 8.48 3.497a11.822 11.822 0 0 1 3.49 8.414c-.003 6.65-5.42 12.065-12.084 12.065a11.88 11.88 0 0 1-6.545-1.85l-6.305 1.65zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.885-4.434 9.888-9.88.002-5.462-4.4-9.89-9.89-9.892-5.452 0-9.887 4.434-9.887 9.88 0 2.21.722 3.891 1.95 5.14l-.82 3.778 3.737-.964zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.148-1.758-.867-2.03-.967-.272-.099-.47-.148-.67.15-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.151-.174.2-.298.3-.497.099-.198.05-.372-.025-.52-.074-.148-.67-1.611-.916-2.203-.242-.579-.487-.5-.67-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.148.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+	    </svg>
+	  </a>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/image.png" alt="Logo" class="rounded-circle border border-2" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#quem-sou">Quem Sou</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="segurosDropdown" role="button" data-bs-toggle="dropdown">
+              Seguros
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="segurosDropdown">
+              <li><a class="dropdown-item" href="#seguros-empresariais">Seguros para Pessoas</a></li>
+              <li><a class="dropdown-item" href="#seguros-empresariais">Seguros para Empresas</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#assistencia">Assistência 24H</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-simule ms-3" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <img src="/img/image-removebg-preview.png" alt="Abenzas Corretora de Seguros">
+      <p class="lead">Com ética, integridade, respeito e responsabilidade como pilares, a Abenzas Corretora de Seguros atua para oferecer soluções personalizadas, garantindo proteção e tranquilidade para você, sua família e seu patrimônio.</p>
+      <a href="https://wa.me/5511988870262?text=Olá,%20gostaria%20de%20falar%20com%20uma%20corretora%20de%20seguros." class="btn btn-light btn-lg">Entrar em contato</a>
+    </div>
+  </section>
+
+
+  <!-- Produtos em Destaque -->
+  <section class="container" id="seguros-empresariais">
+    <h2 class="section-title">
+      VOCÊ <span class="highlight-title">PROTEGIDO</span> SEMPRE
+    </h2>
+    <p class="section-subtitle">Veja alguns produtos em destaque</p>
+
+    <div class="row justify-content-center product-row">
+      <div class="col-6 col-md-4 col-lg-2 product-box">
+        <div class="icon-circle">
+          <i class="fas fa-briefcase-medical"></i>
+        </div>
+        <div class="product-title">Seguro de Vida</div>
+        <a href="#" class="learn-more">Saiba mais</a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 product-box">
+        <div class="icon-circle">
+          <i class="fas fa-car"></i>
+        </div>
+        <div class="product-title">Seguro Automóvel</div>
+        <a href="#" class="learn-more">Saiba mais</a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 product-box">
+        <div class="icon-circle">
+          <i class="fas fa-building-shield"></i>
+        </div>
+        <div class="product-title">Seguro Empresarial</div>
+        <a href="#" class="learn-more">Saiba mais</a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 product-box">
+        <div class="icon-circle">
+          <i class="fas fa-house-user"></i>
+        </div>
+        <div class="product-title">Seguro Residencial</div>
+        <a href="#" class="learn-more">Saiba mais</a>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 product-box">
+        <div class="icon-circle">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="product-title">Seguro D&O</div>
+        <a href="#" class="learn-more">Saiba mais</a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contato" class="contact-section py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <!-- Texto e botões -->
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h2 class="mb-4 fw-bold text-primary">Entre em Contato</h2>
+          <p class="mb-4 fs-5 text-muted">Estou à disposição para ajudar você a escolher o melhor seguro para sua necessidade.</p>
+          
+          <div class="text-center">
+            <a href="https://wa.me/5511988870262?text=Olá,%20gostaria%20de%20falar%20com%20uma%20corretora%20de%20seguros." class="btn btn-outline-primary btn-lg px-4">
+              <i class="fas fa-envelope me-2"></i> Envie uma mensagem
+            </a>
+          </div>
+        </div>
+        
+        <!-- Imagem ilustrativa -->
+        <div class="col-md-6 text-center">
+          <img src="https://segurosvra.do/wp-content/uploads/2021/09/fianza-vector-1024x674.png" 
+               alt="Pessoa ao telefone recebendo atendimento" 
+               class="img-fluid rounded-3">
+        </div>
+
+      </div>
+    </div>
+  </section>
+  
+  <!-- Seção Quem Sou -->
+   <section class="container" id="quem-sou" style="padding-bottom: 50px; ">
+     <h2 class="section-title">Quem Sou</h2>
+     <img src="/img/tatiane.jpg" alt="Tatiane Abenza - Corretora de Seguros" class="foto-redonda mt-3" />
+
+     <p class="lead mt-4 text-center">
+       Sou <strong>Tatiane Abenza</strong>, corretora de seguros dedicada a cuidar do que é mais importante para você: sua vida, sua família e seu patrimônio.
+     </p>
+
+     <p class="text-center">
+       Atuo com compromisso, empatia e transparência, oferecendo soluções sob medida para cada cliente. Com experiência no mercado e atendimento próximo, ajudo você a contratar o seguro certo, sem complicações.
+       <br /><br />
+       Vamos conversar? Estou aqui para garantir sua tranquilidade.
+     </p>
+   </section>
+
+
+  
+  <!-- Parcerias -->
+  <section class="container text-center my-5">
+    <h2 class="section-title">NOSSOS <span class="highlight-title">PARCEIROS</span></h2>
+    <p class="section-subtitle">Trabalhamos com as principais seguradoras do Brasil</p>
+    <div class="row justify-content-center align-items-center g-4">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/OIP.BO25rYFsrSYBwULxn2WvZAHaHa?cb=iwc2&rs=1&pid=ImgDetMain" alt="Bradesco" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://assets-global.website-files.com/635c249e3198361a92fa344d/638d23102a2fb83bb2137376_alice%20logo%20square.png" alt="Alice" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://ameplansaude.com.br/wp-content/uploads/2021/10/Logo-Ameplan-orginal-02-300x71.png" alt="Ameplan" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://i.pinimg.com/originals/23/25/ca/2325ca641f02dc9e87ef41ac9e4c631b.png" alt="BlueMed" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/R.7f1fc1c2763e4bba04d407eec10dc671?rik=0BzB8QoISr9SxA&pid=ImgRaw&r=0" alt="Biovida" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://prestigeseguros.com.br/wp-content/uploads/2019/11/bradesco-1.png" alt="Bradesco Saúde" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/6a/4a/b5/6a4ab519-7f1e-c386-6847-476c75a41e73/source/512x512bb.jpg" alt="Care Plus" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/ed/40/ac/ed40ac03-a578-8084-e17a-672518a457d0/source/512x512bb.jpg" alt="Cruz Azul" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://securynet.com.br/wp-content/uploads/2023/02/ICONE_LOGO_CUIRDAR.ME_-1-392x400.png" alt="Cuidar.me" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/OIP.uizKZZcnPT94ksE-F5l98AHaHc?cb=iwc2&rs=1&pid=ImgDetMain" alt="Golden Cross" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://www.numero1seguros.com.br/wp-content/uploads/2020/10/notredame.jpg" alt="NotreDame Intermédica" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://tuiaseguros.com.br/wp-content/uploads/2019/09/omint-seguros-saude.png" alt="Omint" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://raichu-uploads.s3.amazonaws.com/logo_plena-saude_NJoOCK.png" alt="Plena Saúde" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://qualimaxxcorretora.com.br/wp-content/uploads/2023/02/porto-seguro-420.png" alt="Porto Saúde" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/OIP.hNUBC5LR3B6ERgAXnAgxBwHaHa?cb=iwc2&rs=1&pid=ImgDetMain" alt="Qualicorp" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://reclamacoes.net.br/wp-content/uploads/sami-saude.png" alt="Sami" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://clinicarubensdoval.com.br/wp-content/uploads/2022/10/29-Logo-Sao-Cristovao.png" alt="São Cristóvão" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/OIP.u2CBbdixGuY3JBJKnpnaIQHaIJ?cb=iwc2&rs=1&pid=ImgDetMain" alt="Seguros Unimed" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://isalab.com.br/_next/image?url=https:%2F%2Fcms-assets.isalab.com.br%2Flogotipo_aprovada_1024x571_f6edacbb72.png&w=1080&q=75" alt="Pessoal Saúde" class="img-fluid partner-logo" />
+      </div>
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+        <img src="https://th.bing.com/th/id/OIP.J3a4kHeAdfVOB8Q4UAwX5gHaHa?cb=iwc2&rs=1&pid=ImgDetMain" alt="SulAmérica" class="img-fluid partner-logo" />
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Rodapé com branding -->
+  <footer>
+    <div class="container text-center">
+      <p class="footer-msg">Cuidando do que realmente importa: sua segurança e tranquilidade.</p>
+      <p>&copy; 2025 Abenzas Corretora de Seguros | Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
